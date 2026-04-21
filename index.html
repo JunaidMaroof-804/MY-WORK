@@ -1,103 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌍 WorldClock - Explore 195 Countries</title></head>
-    <link rel="stylesheet" href="WorldClock.css">
-    <script src="WorldClock.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>🌍 WorldClock - Explore 195 Countries</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <div class="app-container">
-        <div class="max-w-container">
-            <!-- Header -->
-            <div class="header">
-                <div class="header-content">
-                    <svg class="globe-icon spin-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                    </svg>
-                    <h1 class="main-title">🌍 WorldClock</h1>
-                    <svg class="globe-icon spin-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                    </svg>
-                </div>
-                <p class="subtitle">⏰ Explore 195 Countries • 🔴 Live Updates • 📚 Fun Facts</p>
-            </div>
 
-            <!-- Search Bar -->
-            <div class="search-container">
-                <div class="search-wrapper">
-                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <path d="m21 21-4.35-4.35"></path>
-                    </svg>
-                    <input 
-                        type="text" 
-                        id="searchInput" 
-                        class="search-input" 
-                        placeholder="Search countries or cities..."
-                    >
-                </div>
-            </div>
+  <div class="app-container">
+    <div class="max-w-container">
 
-            <!-- Tabs -->
-            <div class="tabs-container">
-                <div class="tabs-list">
-                    <button class="tab-button active" data-tab="countries">
-                        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="2" y1="12" x2="22" y2="12"></line>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                        </svg>
-                        Countries (<span id="countriesCount">0</span>)
-                    </button>
-                    <button class="tab-button" data-tab="cities">
-                        <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
-                            <path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"></path>
-                        </svg>
-                        Cities (<span id="citiesCount">0</span>)
-                    </button>
-                </div>
-            </div>
-
-            <!-- Content -->
-            <div class="tab-content active" id="countriesTab">
-                <div class="grid-container" id="countriesGrid"></div>
-                <div class="empty-state" id="countriesEmpty" style="display: none;">
-                    <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                    </svg>
-                    <p>No countries found!</p>
-                </div>
-            </div>
-
-            <div class="tab-content" id="citiesTab">
-                <div class="grid-container cities-grid" id="citiesGrid"></div>
-                <div class="empty-state" id="citiesEmpty" style="display: none;">
-                    <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
-                        <path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"></path>
-                    </svg>
-                    <p>No cities found!</p>
-                </div>
-            </div>
+      <!-- ===== HEADER ===== -->
+      <header class="header">
+        <div class="header-content">
+          <svg class="globe-icon spin-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <h1 class="main-title">🌍 WorldClock</h1>
+          <svg class="globe-icon spin-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
         </div>
+        <p class="subtitle">⏰ Explore 195 Countries · 🔴 Live Updates · 📚 Fun Facts</p>
+      </header>
+
+      <!-- ===== SEARCH ===== -->
+      <div class="search-container" role="search">
+        <div class="search-wrapper">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input
+            type="search"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search countries or cities..."
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            aria-label="Search countries or cities"
+          >
+        </div>
+      </div>
+
+      <!-- ===== TABS ===== -->
+      <div class="tabs-container" role="tablist">
+        <div class="tabs-list">
+          <button class="tab-button active" data-tab="countries" role="tab" aria-selected="true" aria-controls="countriesTab">
+            <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            Countries (<span id="countriesCount">0</span>)
+          </button>
+          <button class="tab-button" data-tab="cities" role="tab" aria-selected="false" aria-controls="citiesTab">
+            <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+              <path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/>
+            </svg>
+            Cities (<span id="citiesCount">0</span>)
+          </button>
+        </div>
+      </div>
+
+      <!-- ===== COUNTRIES TAB ===== -->
+      <div class="tab-content active" id="countriesTab" role="tabpanel">
+        <div class="grid-container" id="countriesGrid"></div>
+        <div class="empty-state" id="countriesEmpty" style="display:none;" aria-live="polite">
+          <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <p>No countries found!</p>
+        </div>
+      </div>
+
+      <!-- ===== CITIES TAB ===== -->
+      <div class="tab-content" id="citiesTab" role="tabpanel">
+        <div class="grid-container cities-grid" id="citiesGrid"></div>
+        <div class="empty-state" id="citiesEmpty" style="display:none;" aria-live="polite">
+          <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+            <path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/>
+          </svg>
+          <p>No cities found!</p>
+        </div>
+      </div>
+
+    </div><!-- /.max-w-container -->
+  </div><!-- /.app-container -->
+
+  <!-- ===== MODAL ===== -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Country details">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close">&#x2715;</button>
+      <div id="modalBody"></div>
     </div>
+  </div>
 
-    <!-- Modal -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">&times;</button>
-            <div id="modalBody"></div>
-        </div>
- </body> 
- <footer style="text-align: center; padding: 15px; background-color: #000000; font-weight: bold;">
-  JUNAID MAROOF MEMON
-</footer>
+  <script src="script.js"></script>
+</body>
 </html>
